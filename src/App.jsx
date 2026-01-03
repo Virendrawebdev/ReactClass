@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const App = () => {
-  const [num, setNum] = useState(0)
-  
+  const submitHandler=(e)=>{
+    e.preventDefault()
+    console.log('Form Submitted')
+  }
+ 
   return (
     <div>
-      <h1>{num}</h1>
-      <button onClick={()=>{
-         setNum(num +1)
-      }
-       }>increase by 1</button>
-       <button onClick={()=>{
-         setNum(num +5)
-      }
-       }>increase by 5</button>
+    <form onSubmit={(e)=>{
+      submitHandler(e)
+    }}>
+    <input type='text' placeholder='Enter your name '/>
+    <button>Submit</button>
+    </form> 
     </div>
   )
 }
